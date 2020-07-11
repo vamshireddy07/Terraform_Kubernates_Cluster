@@ -29,13 +29,13 @@ def getgroupofhosts(ec2):
     return allgroups
 
 
- def main():
+def main():
     ec2 = boto3.resource("ec2")
     all_groups = getgroupofhosts(ec2)
     inventory = {}
     for key, value in all_groups.items():
         hostsobj = {'hosts': value}
-        inventory[Key] = hostsobj
+        inventory["Key"] = hostsobj
     print(json.dumps(inventory))
 
 
