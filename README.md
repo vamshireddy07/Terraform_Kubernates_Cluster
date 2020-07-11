@@ -8,7 +8,10 @@
    + EC2FullAcces
    + S3FullAccess  ..etc
 + Attach IAM Role to EC2 Instance.
-
+### Create user to install Ansible & terraform
+$sudo useradd ansible
+$echo "ansible ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/ansible
+$sudo su ansible
 ### Install Terraform
 
 ``` sh
@@ -23,6 +26,14 @@ $ vi .bashrc
 # Source .bashrc to reflect for current session
 $ source ~/.bashrc   
 ```
+####Ansible Installation
+$sudo su ansible
+$sudo yum install python3 -y
+$sudo alternatives --set python /usr/bin/python3
+$sudo yum -y install python3-pip -y
+$pip3 install ansible --user
+$pip3 install boto3 --user
+
 #### Clone terraform scripts
 ``` sh
 $ git clone https://github.com/vamshireddy07/Kuberenets_Cluster.git
