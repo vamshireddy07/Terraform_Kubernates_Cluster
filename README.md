@@ -36,7 +36,7 @@ $pip3 install boto3 --user
 
 #### Clone terraform scripts
 ``` sh
-$ git clone https://github.com/vamshireddy07/Kuberenets_Cluster.git
+$ git clone https://github.com/vamshireddy07/Terraform_Kubernates_Cluster.git
 $ cd Terraform_Scripts
 ```
 #### <span style="color:orange">Update Your Key Name in variables.tf file before executing terraform script.</span>
