@@ -6,7 +6,6 @@
 + Create IAM Role With Required Polocies.
    + VPCFullAccess
    + EC2FullAcces
-   + S3FullAccess  ..etc
 + Attach IAM Role to EC2 Instance.
 ### Create user to install Ansible & terraform
 $sudo useradd ansible
@@ -37,20 +36,20 @@ $pip3 install boto3 --user
 #### Clone terraform scripts
 ``` sh
 $ git clone https://github.com/vamshireddy07/Terraform_Kubernates_Cluster.git
-$ cd Terraform_Scripts
+$ cd Terraform_Kubernates_Cluster
 ```
 #### <span style="color:orange">Update Your Key Name in variables.tf file before executing terraform script.</span>
 ## Infrastructure As A Code
 #### Create Infrastructure(VPC,Subnets,Route Tables,EC2 Instnaces ..etc) As A Code Using Terraform Scripts
 ``` sh
 # Initialise to install plugins
-$ terraform init VPC/
+$ terraform init Terraform_Kubernates_Cluster/
 # Validate teffaform scripts
-$ terraform validate VPC/
+$ terraform validate Terraform_Kubernates_Cluster/
 # Plan terraform scripts which will list resources which is going  be created.
-$ terraform plan VPC/
+$ terraform plan Terraform_Kubernates_Cluster/
 # Apply to create resources
-$ terraform apply --auto-approve VPC/
+$ terraform apply --auto-approve Terraform_Kubernates_Cluster/
 ```
 
 ##  Destroy Infrastructure  
