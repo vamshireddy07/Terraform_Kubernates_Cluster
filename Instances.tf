@@ -23,7 +23,7 @@ resource "aws_instance" "kubernetes_workers" {
  
   tags = {
     Name = "kubernetes_Server"
-    Type = "kubernetes_master"
+    Type = "kubernetes_worker"
   }
 
 
