@@ -1,0 +1,44 @@
+- hosts: Kubernetes_Servers
+  become: Yes
+  tasks:
+     name: Docker Installation
+     apt:
+       name: docker.io
+       state: present
+       update-cache: true
+       
+   - name: insatll APT Transport HTTPS
+    apt:
+      name: apt-transport-https
+      state: present
+      
+  - name: add kubernetes apt-key for APT repository
+    apt-key:
+      url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+      state: present
+     
+  - name: add kubernetes APT repository
+    apt_repository:
+    repo: deb http://apt.kubernetes.io/ kubernetes-xenail main
+    state: present
+    filename: 'kubernetes'
+    
+ - name: install kubelet
+   apt:
+     name: kubeadm=1.18.3-00
+     state: present
+     update_cache: true
+     
+ - name: install kubeadm
+   apt:
+     name: kubeadm=1.18.3-00
+     state= present
+     
+- hosts: kubernetes_master
+  become: yes
+  tasks: 
+   - name: install kubectl
+     apt:
+       name: kubectl=1.18.3-00
+       state: present
+       force: yes
