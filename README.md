@@ -54,8 +54,8 @@ $ terraform apply --auto-approve Terraform_Kubernates_Cluster/
 ###Configuration Management
 ##Check if Dynamicinvntry scripts works.
 
-$ chmod =x Dynamicinvnrty.py
-$ ./Dynamicinvnrty.py --list
+$ chmod +x Dynamicinvntry.py
+$ ./Dynamicinvntry.py --list
 
 ###Kubernetes cluster Setup Using Ansible(Configuration Management)With Dynamicinvntry.
  ###Create a pem file and copy aws private key(pem) file content which you used in terraform.
