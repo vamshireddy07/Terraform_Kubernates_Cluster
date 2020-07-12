@@ -26,12 +26,12 @@ $ vi .bashrc
 $ source ~/.bashrc   
 ```
 ####Ansible Installation
-$sudo su ansible
-$sudo yum install python3 -y
-$sudo alternatives --set python /usr/bin/python3
-$sudo yum -y install python3-pip -y
-$pip3 install ansible --user
-$pip3 install boto3 --user
+$ sudo su ansible
+$ sudo yum install python3 -y
+$ sudo alternatives --set python /usr/bin/python3
+$ sudo yum -y install python3-pip -y
+$ pip3 install ansible --user
+$ pip3 install boto3 --user
 
 #### Clone terraform scripts
 ``` sh
@@ -54,18 +54,18 @@ $ terraform apply --auto-approve Terraform_Kubernates_Cluster/
 Configuration Management
 Check if Dynamicinvntry scripts works.
 
-$chmod =x Dynamicinvnrty.py
-$./Dynamicinvnrty.py --list
+$ chmod =x Dynamicinvnrty.py
+$ ./Dynamicinvnrty.py --list
 
 Kubernetes cluster Setup Using Ansible(Configuration Management)With Dynamicinvntry.
  Create a pem file and copy aws private key(pem) file content which you used in terraform.
  
- $vi devops.pem
- $chmod.400 devops.pem
+ $ vi devops.pem
+ $ chmod.400 devops.pem
  
  Replace<pemfile> with your pemfile path in server
    
-   $ansible-playbook -i Dynamicinvnrty.py site.yml -u ubuntu --private-key=<PemFilePath> --ssh-common-args "-o StrictHostKeyChecking=no"
+   $ ansible-playbook -i Dynamicinvnrty.py site.yml -u ubuntu --private-key=<PemFilePath> --ssh-common-args "-o StrictHostKeyChecking=no"
 
 ##  Destroy Infrastructure  
 ```sh
