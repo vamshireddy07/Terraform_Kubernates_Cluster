@@ -51,19 +51,19 @@ $ terraform plan Terraform_Kubernates_Cluster/
 # Apply to create resources
 $ terraform apply --auto-approve Terraform_Kubernates_Cluster/
 ```
-Configuration Management
-Check if Dynamicinvntry scripts works.
+###Configuration Management
+##Check if Dynamicinvntry scripts works.
 
 $ chmod =x Dynamicinvnrty.py
 $ ./Dynamicinvnrty.py --list
 
-Kubernetes cluster Setup Using Ansible(Configuration Management)With Dynamicinvntry.
- Create a pem file and copy aws private key(pem) file content which you used in terraform.
+###Kubernetes cluster Setup Using Ansible(Configuration Management)With Dynamicinvntry.
+ ###Create a pem file and copy aws private key(pem) file content which you used in terraform.
  
  $ vi devops.pem
  $ chmod.400 devops.pem
  
- Replace<pemfile> with your pemfile path in server
+ ##Replace<pemfile> with your pemfile path in server
    
    $ ansible-playbook -i Dynamicinvnrty.py site.yml -u ubuntu --private-key=<PemFilePath> --ssh-common-args "-o StrictHostKeyChecking=no"
 
